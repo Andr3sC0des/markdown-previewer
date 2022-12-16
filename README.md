@@ -4,7 +4,6 @@
 
 ## SKILLS
 
-- Fetch API
 - Functional Components
 - useState
 - useEffect
