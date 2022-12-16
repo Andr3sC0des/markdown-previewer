@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap')
+
+$bg-color: #1e1e1e
+$font-color: #fff
+$font-family: 'Inter', sans-serif
+
+@mixin no-styles
+    padding: 0
+    margin: 0
+    box-sizing: border-box  
+
+body
+    background: $bg-color
+
+html
+    font-size: 14px
+  
+@mixin titles
+    color: $font-color
+    font-family: $font-family
+@mixin paragraphs
+    color: $font-color
+    font-family: $font-family
+    font-size: 1.5rem
+    margin-top: 1rem
+
+h1
+    font-size: 2.5rem
+h2
+    font-size: 2rem
+h3
+    font-size: 1.67rem
+h4
+    font-size: 1.5rem
+h5
+    font-size: 1.23rem
+h6
+    font-size: 1rem
+
+
+h1, h2, h3, h4, h5, h6
+    @include titles
+    margin: 0
+    & + h1, + h2, + h3, + h4, + h5, + h6
+        margin-top: 1.5rem
+
+p, li
+    @include paragraphs
+
+pre
+    background: #242424 !important
+code
+    background: #242424 !important
+    margin-top: 1rem
+img
+    width: 100%
+    margin-top: 1rem
+blockquote
+    border-left: 3px solid $font-color
+    padding-left: 1rem
+
+table
+    color: $font-color
+    font-size: 1.5rem
+    border-collapse: collapse
+    th
+        border: 1px solid #fff
+    td
+        border: 1px solid #fff
+        padding: 0.5rem
+
+.markdown
+    display: grid
+    grid-template-columns: 50% 50%
+    grid-template-rows: 100%
+.editor
+    color: #fff
+    border-right: 2px solid #242424
+    &__textarea
+        padding: 2rem
+        padding-top: 5rem
+        background: transparent
+        color: #fff
+        width: 90%
+        resize: none
+        border: none
+        outline: none
+        @include paragraphs
+        height: 100%
+.preview
+    padding: 2rem
+    padding-top: 5rem
+
+@media screen and (max-width: 720px)
+    .markdown 
+        grid-template-columns: 100%
+        grid-template-rows: 1fr 1fr
